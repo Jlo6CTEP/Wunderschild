@@ -142,11 +142,9 @@ def obtain_companies(leader_zip):
     date = extract_date.search(main_table.find(class_='text-content').get_text())
 
     if date is None:
-        # this is invalid data-placeholder
         b_date = None
     else:
         b_date = date.group(0)
-        b_date = None
     leader.set_b_date(b_date)
     companies_table = main_table.find_all(class_='elt')
 
